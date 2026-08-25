@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Proyecto</title>
+</head>
+<body>
+	<h1>Proyecto</h1>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TINI - Sitio Oficial</title>
+    <style>
+        /* --- VARIABLES DE COLOR Y ESTILOS BASE --- */
+        :root {
+            --bg-dark: #0a020d;
+            --bg-purple: #23022e;
+            --purple-card: #450c59;
+            --accent-pink: #e024b3;
+            --accent-magenta: #c026d3;
+            --gradient-button: linear-gradient(90deg, #e024b3, #8b5cf6);
+            --text-light: #ffffff;
+            --text-muted: #d8b4fe;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            scroll-behavior: smooth;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 2, 13, 0.95);
+            display: table;
+            padding: 15px 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(224, 36, 179, 0.3);
+        }
+
+        .logo {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .logo span {
+            color: var(--accent-pink);
+            background: #e024b3;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        nav {
+            display: table-cell;
+            text-align: right;
+            vertical-align: middle;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-pink);
+        }
+
+        /* --- SECCIONES COMUNES --- */
+        section {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 40px;
+            color: var(--text-muted);
+            font-weight: bold;
+        }
+
+        /* --- HERO / INICIO --- */
+        #inicio {
+            background: radial-gradient(circle, #4a0d5c 0%, #0a020d 80%);
+            padding-top: 130px;
+            padding-bottom: 60px;
+        }
+
+        .hero-img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid var(--accent-pink);
+            box-shadow: 0 0 20px rgba(224, 36, 179, 0.4);
+            margin: 0 auto 30px auto;
+            display: block;
+        }
+
+        .hero-title {
+            font-size: 52px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #ffffff;
+            word-spacing: 5px;
+        }
+
+        /* --- BIOGRAFÍA --- */
+        #bio {
+            background-color: var(--bg-dark);
+            text-align: left;
+        }
+
+        .bio-container {
+            display: table;
+            width: 100%;
+        }
+
+        .bio-text {
+            display: table-cell;
+            width: 55%;
+            vertical-align: middle;
+            padding-right: 40px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .bio-text p {
+            margin-bottom: 20px;
+        }
+
+        .bio-text highlight {
+            color: var(--accent-pink);
+            font-weight: bold;
+        }
+
+        .bio-img-container {
+            display: table-cell;
+            width: 45%;
+            vertical-align: middle;
+        }
+
+        .bio-img {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--accent-pink);
+        }
+
+        /* --- DISCOGRAFÍA --- */
+        #musica {
+            background-color: #000;
+        }
+
+        .albums-grid {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .album-card {
+            display: inline-block;
+            width: 15%;
+            margin: 0 0.8%;
+            background-color: #000;
+            border: 1px solid #222;
+            border-radius: 10px;
+            padding: 30px 10px;
+            vertical-align: top;
+        }
+
+        .album-cover {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            height: 50px;
+        }
+
+        .album-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .album-year {
+            font-size: 14px;
+            color: var(--accent-pink);
+        }
+
+        /* --- TOUR DATES --- */
+        #tour {
+            background-color: var(--bg-purple);
+        }
+
+        .tour-item {
+            background-color: var(--purple-card);
+            border-radius: 10px;
+            padding: 20px 30px;
+            margin-bottom: 15px;
+            display: table;
+            width: 100%;
+            text-align: left;
+        }
+
+        .tour-date {
+            display: table-cell;
+            width: 25%;
+            vertical-align: middle;
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--accent-pink);
+        }
+
+        .tour-location {
+            display: table-cell;
+            width: 50%;
+            vertical-align: middle;
+        }
+
+        .tour-city {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .tour-venue {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .tour-action {
+            display: table-cell;
+            width: 25%;
+            text-align: right;
+            vertical-align: middle;
+        }
+
+        .btn-ticket {
+            background: var(--gradient-button);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- TIENDA OFICIAL --- */
+        #tienda {
+            background-color: #000;
+        }
+
+        .shop-grid {
+            width: 100%;
+            text-align: center;
+        }
+
+        .shop-item {
+            display: inline-block;
+            width: 30%;
+            margin: 0 1%;
+            background-color: var(--purple-card);
+            border-radius: 12px;
+            overflow: hidden;
+            vertical-align: top;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .shop-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .shop-info {
+            padding: 15px;
+        }
+
+        .shop-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-shop {
+            background: var(--gradient-button);
+            color: white;
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* --- FAN CLUB FORM --- */
+        #fanclub {
+            background-color: var(--bg-purple);
+        }
+
+        .fanclub-desc {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .form-card {
+            background-color: rgba(69, 12, 89, 0.6);
+            border: 2px solid var(--accent-pink);
+            border-radius: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #555;
+            background-color: #000;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .form-checkbox {
+            display: table;
+            margin-bottom: 20px;
+        }
+
+        .form-checkbox input {
+            display: table-cell;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .form-checkbox span {
+            display: table-cell;
+            font-size: 12px;
+            color: #ddd;
+            vertical-align: middle;
+        }
+
+        .btn-submit {
+            background: var(--gradient-button);
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <header>
+        <div class="logo"><span>👤</span> TINI</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#bio">Bio</a>
+            <a href="#musica">Música</a>
+            <a href="#tour">Tour</a>
+            <a href="#tienda">Tienda</a>
+        </nav>
+    </header>
+
+    <!-- 1. INICIO (HERO) -->
+    <section id="inicio">
+        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&auto=format&fit=crop" alt="Tini Stoessel" class="hero-img">
+        <h1 class="hero-title">TINI STOESSEL</h1>
+        <p class="hero-subtitle">Pop • Trap • Latin • Internacional</p>
+    </section>
+
+    <!-- 2. BIOGRAFÍA -->
+    <section id="bio">
+        <h2 class="section-title">Biografía</h2>
+        <div class="bio-container">
+            <div class="bio-text">
+                <p><span style="color:var(--accent-pink); font-weight:bold;">Martina Stoessel</span>, conocida artísticamente como TINI, es una cantante, actriz y compositora argentina que ha conquistado el corazón de millones alrededor del mundo.</p>
+                <p>Desde su inicio en <span style="color:#c084fc;">Violetta</span> hasta convertirse en una de las artistas latinas más influyentes, TINI ha demostrado una evolución artística excepcional, fusionando pop, trap y ritmos urbanos con su estilo único.</p>
+                <p>Con colaboraciones junto a artistas internacionales como Sebastián Yatra, Karol G, y Alejandro Sanz, TINI ha consolidado su carrera en la escena musical global, acumulando millones de reproducciones y premios internacionales.</p>
+            </div>
+            <div class="bio-img-container">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format&fit=crop" alt="Tini Show" class="bio-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. DISCOGRAFÍA -->
+    <section id="musica">
+        <h2 class="section-title">Discografía</h2>
+        <div class="albums-grid">
+            <div class="album-card">
+                <div class="album-cover">TINI</div>
+                <div class="album-title">TINI</div>
+                <div class="album-year">2016</div>
+            </div>
+            <div class="album-card">
+                <div class="album-cover">TINI</div>
+                <div class="album-title">Quiero Volver</div>
+                <div class="album-year">2018</div>
+            </div>
+            <div class="album-card">
+                <div class="album-cover">TINI</div>
+                <div class="album-title">TINI TINI TINI</div>
+                <div class="album-year">2020</div>
+            </div>
+            <div class="album-card">
+                <div class="album-cover">TINI</div>
+                <div class="album-title">Cupido</div>
+                <div class="album-year">2023</div>
+            </div>
+            <div class="album-card">
+                <div class="album-cover">TINI</div>
+                <div class="album-title">Un Mechón de Pelo</div>
+                <div class="album-year">2024</div>
+            </div>
+            <div class="album-card">
+                <div class="album-cover">TINI</div>
+                <div class="album-title">Singles</div>
+                <div class="album-year">2024</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TOUR DATES -->
+    <section id="tour">
+        <h2 class="section-title">Tour Dates</h2>
+        
+        <div class="tour-item">
+            <div class="tour-date">10 AGO 2026</div>
+            <div class="tour-location">
+                <div class="tour-city">Buenos Aires, Argentina</div>
+                <div class="tour-venue">Estadio River Plate</div>
+            </div>
+            <div class="tour-action">
+                <button class="btn-ticket" onclick="alert('Redirigiendo a compra de entradas...')">Comprar Tickets</button>
+            </div>
+        </div>
+
+        <div class="tour-item">
+            <div class="tour-date">18 AGO 2026</div>
+            <div class="tour-location">
+                <div class="tour-city">Santiago, Chile</div>
+                <div class="tour-venue">Movistar Arena</div>
+            </div>
+            <div class="tour-action">
+                <button class="btn-ticket" onclick="alert('Redirigiendo a compra de entradas...')">Comprar Tickets</button>
+            </div>
+        </div>
+
+        <div class="tour-item">
+            <div class="tour-date">25 AGO 2026</div>
+            <div class="tour-location">
+                <div class="tour-city">Lima, Perú</div>
+                <div class="tour-venue">Arena Perú</div>
+            </div>
+            <div class="tour-action">
+                <button class="btn-ticket" onclick="alert('Redirigiendo a compra de entradas...')">Comprar Tickets</button>
+            </div>
+        </div>
+
+        <div class="tour-item">
+            <div class="tour-date">05 SEP 2026</div>
+            <div class="tour-location">
+                <div class="tour-city">Ciudad de México, México</div>
+                <div class="tour-venue">Foro Sol</div>
+            </div>
+            <div class="tour-action">
+                <button class="btn-ticket" onclick="alert('Redirigiendo a compra de entradas...')">Comprar Tickets</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TIENDA OFICIAL -->
+    <section id="tienda">
+        <h2 class="section-title">Tienda Oficial</h2>
+        <div class="shop-grid">
+            <div class="shop-item">
+                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&auto=format&fit=crop" alt="Remera Tour 2026" class="shop-img">
+                <div class="shop-info">
+                    <div class="shop-title">Remera Tour 2026</div>
+                    <button class="btn-shop" onclick="alert('Producto agregado al carrito')">Comprar Ahora</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=500&auto=format&fit=crop" alt="Hoodie TINI" class="shop-img">
+                <div class="shop-info">
+                    <div class="shop-title">Hoodie TINI</div>
+                    <button class="btn-shop" onclick="alert('Producto agregado al carrito')">Comprar Ahora</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <div class="shop-img" style="display:flex; justify-content:center; align-items:center; color:#888; font-size:50px;">🖼️</div>
+                <div class="shop-info">
+                    <div class="shop-title">CD Cupido</div>
+                    <button class="btn-shop" onclick="alert('Producto agregado al carrito')">Comprar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FAN CLUB -->
+    <section id="fanclub">
+        <p class="fanclub-desc">Únete al Fan Club oficial y sé el primero en enterarte de noticias, lanzamientos exclusivos y acceso anticipado a tickets.</p>
+        
+        <div class="form-card">
+            <form onsubmit="event.preventDefault(); alert('¡Gracias por unirte al Fan Club!');">
+                <div class="form-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" class="form-control" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>País</label>
+                    <select class="form-control">
+                        <option value="AR">Argentina</option>
+                        <option value="CL">Chile</option>
+                        <option value="PE">Perú</option>
+                        <option value="MX">México</option>
+                        <option value="ES">España</option>
+                    </select>
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <span>Acepto recibir noticias, promociones y contenido exclusivo de TINI</span>
+                </div>
+                <button type="submit" class="btn-submit">Unirme al Fan Club 💜</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
+<head>
+    <meta charset="UTF-8">
+    <title>TINI - Sitio Oficial</title>
+    
+    <!-- Aquí es donde llamas al archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    
+    <!-- Aquí va todo el contenido de tu página: header, secciones, textos, imágenes, etc. -->
+    <h1>Hola Mundo</h1>
+
+    <!-- Justo antes del cierre del body, llamas a tu archivo JavaScript -->
+    <script src="script.js"></script>
+
+</body>
