@@ -1,0 +1,6 @@
+robots.txt
+User-agent: *
+Allow: /S
+Disallow: /registrar_usuario.php
+
+Sitemap: https://tu-sitio-tini.github.io/sitemap.xml

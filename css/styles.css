@@ -523,3 +523,7 @@ footer p {
     .tour-item { display: block; }
     .shop-item { width: 100%; margin: 0 0 20px 0; }
 }
+body.modo-claro {
+    background-color: #ffffff;
+    color: #000000;
+}
