@@ -98,3 +98,33 @@ function mostrarResumen(event) {
         alert("¡Formulario enviado con éxito!");
     }
 }
+let listaFotos = ["inicio.webp", "concierto.webp", "cd.webp"];
+let fotoActual = 0;
+
+document.addEventListener("DOMContentLoaded", function() {
+    let btnSig = document.getElementById("btn-siguiente");
+    let btnAnt = document.getElementById("btn-anterior");
+    let imgAmpliada = document.getElementById("imagen-ampliada");
+
+    if (btnSig && btnAnt && imgAmpliada) {
+        // Lógica para pasar a la siguiente imagen
+        btnSig.addEventListener("click", function() {
+            fotoActual++;
+            if (fotoActual >= listaFotos.length) fotoActual = 0;
+            imgAmpliada.src = listaFotos[fotoActual];
+        });
+
+        // Lógica para retroceder a la imagen anterior
+        btnAnt.addEventListener("click", function() {
+            fotoActual--;
+            if (fotoActual < 0) fotoActual = listaFotos.length - 1;
+            imgAmpliada.src = listaFotos[fotoActual];
+        });
+    }
+});
+
+// Lógica para mostrar la imagen ampliada al hacer clic en una miniatura
+function abrirMiniatura(rutaImagen, indice) {
+    document.getElementById("imagen-ampliada").src = rutaImagen;
+    fotoActual = indice; // Sincroniza el contador para que los botones sigan el orden correcto
+}

@@ -527,3 +527,47 @@ body.modo-claro {
     background-color: #ffffff;
     color: #000000;
 }
+.galeria-contenedor { 
+    text-align: center; 
+    max-width: 600px; 
+    margin: 20px auto; 
+}
+.caja-principal { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 15px; 
+    margin-bottom: 15px; 
+}
+#imagen-ampliada { 
+    width: 100%; 
+    max-width: 400px; 
+    border-radius: 10px; 
+    transition: opacity 0.3s;
+}
+.caja-principal button { 
+    background-color: var(--accent-pink, #ff007f); 
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    cursor: pointer; 
+    border-radius: 50%; 
+    font-size: 18px; 
+}
+.caja-miniaturas { 
+    display: flex; 
+    justify-content: center; 
+    gap: 10px; 
+}
+.miniatura { 
+    width: 80px; 
+    height: 80px; 
+    object-fit: cover; 
+    cursor: pointer; 
+    border-radius: 8px; 
+    border: 2px solid transparent; 
+    transition: border-color 0.3s; 
+}
+.miniatura:hover { 
+    border-color: var(--accent-pink, #ff007f); 
+}

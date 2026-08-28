@@ -25,6 +25,10 @@
         </nav>
     </header>
 </header>
+<div style="text-align: center; margin-top: 15px;">
+    <button id="toggle-tema" class="btn-tema">☀️ Cambiar a Modo Claro</button>
+</div>
+
     <!-- 1. INICIO (HERO) -->
     <section id="inicio">
         <img src="inicio.webp" alt="Tini en el escenario" class="hero-img">
@@ -50,8 +54,22 @@
                 <img src="concierto.webp" alt="Show de Tini" class="bio-img">
             </div>
         </div>
-    </section>
+ <div class="galeria-contenedor">
+    <!-- Imagen Principal con Botones Laterales -->
+    <div class="caja-principal">
+        <button id="btn-anterior">◀</button>
+        <img id="imagen-ampliada" src="inicio.webp" alt="Tini Ampliada">
+        <button id="btn-siguiente">▶</button>
+    </div>
 
+    <!-- Fila de Miniaturas -->
+    <div class="caja-miniaturas">
+        <!-- El evento onclick envía la ruta de la imagen y su número de orden -->
+        <img class="miniatura" src="inicio.webp" alt="Inicio" onclick="abrirMiniatura(this.src, 0)">
+        <img class="miniatura" src="concierto.webp" alt="Concierto" onclick="abrirMiniatura(this.src, 1)">
+        <img class="miniatura" src="cd.webp" alt="CD" onclick="abrirMiniatura(this.src, 2)">
+    </div>
+</div>
     <!-- 3. DISCOGRAFÍA -->
     <section id="musica">
         <h2 class="section-title">Discografía</h2>
@@ -94,10 +112,10 @@
         <h2 class="section-title">Tour Dates</h2>
         
         <div class="tour-item">
-            <div class="tour-date">10 AGO 2026</div>
+            <div class="tour-date">16 may 2026</div>
             <div class="tour-location">
-                <div class="tour-city">Buenos Aires, Argentina</div>
-                <div class="tour-venue">Estadio River Plate</div>
+                <div class="tour-city">Salta, Argentina</div>
+                <div class="tour-venue">Estadio Martearena </div>
             </div>
            <div class="tour-action">
                 <!-- ENLACE EXTERNO A UNA TICKETERA -->
@@ -167,7 +185,7 @@
         </div>
     </section>
 
-    <!-- 6. FAN CLUB -->
+    
    <!-- 6. FAN CLUB Y REGISTRO (Actualizado para TP Formularios) -->
     <section id="fanclub">
         <h2 class="section-title">Registro al Fan Club</h2>
@@ -259,7 +277,7 @@
         </div>
 
         <hr>
-        <footer><p>Pie de página: Sección Fan Club</p></footer>
+        <footer><p></p> Sección Fan Club</p></footer>
     </section>
 </html>
 <head>
@@ -294,7 +312,7 @@
         </details>
 
         <hr>
-        <footer><p>Pie de página: Sección Curso</p></footer>
+        <footer><p> Sección Curso</p></footer>
     </section>
 
     <!-- 8. BLOG -->
@@ -323,7 +341,7 @@ y tú tardas en madurar"
         </details>
 
         <hr>
-        <footer><p>Pie de página: Sección Blog</p></footer>
+        <footer><p> Sección Blog</p></footer>
     </section>
 
     <!-- 9. QUIÉNES SOMOS Y FAQ -->
@@ -346,7 +364,7 @@ y tú tardas en madurar"
         </details>
 
         <hr>
-        <footer><p>Pie de página: Sección Nosotros</p></footer>
+        <footer><p> Sección Nosotros</p></footer>
     </section>
 
     <!-- 10. CURRICULUM VITAE (Independiente) -->
@@ -365,7 +383,7 @@ y tú tardas en madurar"
         </details>
 
         <hr>
-        <footer><p>Pie de página: Sección CV</p></footer>
+        <footer><p> Sección CV</p></footer>
     </section>
     <head>
     <meta charset="UTF-8">
@@ -380,4 +398,4 @@ y tú tardas en madurar"
     <link rel="stylesheet" href="styles.css">
 </head>
 <div id="reloj" style="font-size: 16px; font-weight: bold; color: var(--accent-pink);"></div>
-<button onclick="toggleDarkMode()" style="cursor:pointer;">🌙 Cambiar Tema</button>
+<button id="toggle-tema" class="btn-tema">🌙 Cambiar Tema</button>
