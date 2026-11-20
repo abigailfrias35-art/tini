@@ -1,3 +1,7 @@
+# Variables de entorno y credenciales (OBLIGATORIO TP4)
+.env
+
+# Documentos locales
 /artazar tp 2 .docx
 /Frias milena.docx
 /tp 3 Diseño UIUX Mockup Figma .docx
@@ -5,3 +9,8 @@
 /Tp 5.docx
 /TP 7  HTML Formularios y validaciones.docx
 /tp8.docx
+
+# Archivos de sistema y logs
+*.log
+.DS_Store
+Thumbs.db
