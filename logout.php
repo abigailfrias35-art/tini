@@ -1,0 +1,34 @@
+<?php
+/**
+ * logout.php
+ * Cierre de sesión seguro con destrucción de variables, cookies y sesión
+ * Estudiante: Frias Abigail
+ */
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// 1. Vaciar el arreglo $_SESSION
+$_SESSION = [];
+
+// 2. Borrar la cookie de sesión del navegador si existe
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(
+        session_name(),
+        '',
+        time() - 42000,
+        $params["path"],
+        $params["domain"],
+        $params["secure"],
+        $params["httponly"]
+    );
+}
+
+// 3. Destruir la sesión en el servidor
+session_destroy();
+
+// 4. Redirigir al inicio con notificación
+header("Location: index.php?logout=1");
+exit;
