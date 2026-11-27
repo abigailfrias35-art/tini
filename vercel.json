@@ -6,6 +6,18 @@
       "handle": "filesystem"
     },
     {
+      "src": "/admin",
+      "dest": "/admin.html"
+    },
+    {
+      "src": "/panel_usuario",
+      "dest": "/panel_usuario.html"
+    },
+    {
+      "src": "/proyecto",
+      "dest": "/proyecto.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }

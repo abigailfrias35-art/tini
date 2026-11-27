@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Panel Fan Club - TINI Stoessel Oficial</title>
+    <meta name="description" content="Panel de usuario y membresía VIP del Fan Club Oficial de Tini Stoessel. Desarrollado por Frias Abigail.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR DE HORA EN VIVO -->
+    <div id="reloj" style="font-size: 15px; font-weight: bold; color: var(--accent-pink, #e024b3); text-align: center; padding: 6px 0; background: rgba(0,0,0,0.5);"></div>
+
+    <!-- ENCABEZADO Y NAVEGACIÓN -->
+    <header>
+        <div class="logo">
+            <a href="index.html" style="color: inherit; text-decoration: none;"><span>💜</span> TINI</a>
+        </div>
+        <nav>
+            <a href="index.html#inicio">Inicio</a>
+            <a href="index.html#bio">Bio</a>
+            <a href="index.html#musica">Música</a>
+            <a href="index.html#tour">Tour</a>
+            <a href="index.html#tienda">Tienda</a>
+            <a href="panel_usuario.html" class="active" style="color: #c084fc; font-weight: bold;">💜 Mi Panel Fan</a>
+            <a href="admin.html" style="color: #00ff88;">⭐ Panel Admin</a>
+            <a href="proyecto.html">Proyecto</a>
+        </nav>
+    </header>
+
+    <div style="text-align: center; margin-top: 15px;">
+        <button id="toggle-tema" class="btn-tema" onclick="toggleDarkMode()">☀️ Cambiar Modo</button>
+    </div>
+
+    <main style="max-width: 1100px; margin: 35px auto; padding: 0 20px;">
+
+        <!-- ENCABEZADO DE BIENVENIDA -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; border-bottom: 2px solid var(--accent-pink, #e024b3); padding-bottom: 15px; margin-bottom: 25px;">
+            <div>
+                <h1 style="margin: 0; color: #fff; font-size: 26px;">
+                    💜 Panel de Fan Club Oficial
+                </h1>
+                <p style="margin: 6px 0 0 0; color: #cbd5e1; font-size: 14px;">
+                    Bienvenida/o, <strong>Frias Abigail</strong> &bull; Miembro VIP Oficial del Fan Club TINI
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <a href="index.html#tienda" class="btn-ticket" style="background: var(--gradient-button); text-decoration: none; font-size: 13px; padding: 10px 18px;">🛍️ Ir a la Tienda</a>
+                <a href="index.html" class="btn-ticket" style="background: #ef4444; text-decoration: none; font-size: 13px; padding: 10px 18px;">Cerrar Sesión</a>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DE CARNET DIGITAL VIP Y BENEFICIOS -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 35px;">
+            
+            <!-- TARJETA DE MEMBRESÍA VIP -->
+            <div style="background: linear-gradient(135deg, #3b0764 0%, #701a75 50%, #831843 100%); border-radius: 16px; padding: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); position: relative; overflow: hidden;">
+                <div style="position: absolute; right: -20px; bottom: -20px; font-size: 130px; opacity: 0.1; pointer-events: none;">💜</div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <span style="font-size: 18px; font-weight: bold; letter-spacing: 2px; color: #fff;">TINI FAN CLUB</span>
+                    <span style="background: #fbbf24; color: #000; font-weight: bold; font-size: 11px; padding: 3px 8px; border-radius: 12px; text-transform: uppercase;">VIP Pass</span>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <div style="font-size: 12px; color: #f5d0fe; text-transform: uppercase;">Titular de la Membresía</div>
+                    <div style="font-size: 22px; font-weight: bold; color: #fff; margin-top: 2px;">
+                        Frias Abigail
+                    </div>
+                    <div style="font-size: 13px; color: #e9d5ff;">abigailfrias35@gmail.com</div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 15px;">
+                    <div>
+                        <div style="font-size: 11px; color: #f5d0fe;">N° DE SOCIO</div>
+                        <div style="font-family: monospace; font-size: 14px; color: #fff; font-weight: bold;">
+                            #TINI-0001-2026
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size: 11px; color: #f5d0fe;">ESTADO</div>
+                        <div style="color: #4ade80; font-weight: bold; font-size: 13px;">● ACTIVO</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA DE BENEFICIOS EXCLUSIVOS -->
+            <div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 25px; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3 style="color: var(--accent-pink, #e024b3); margin-top: 0; font-size: 18px; margin-bottom: 15px;">
+                        🎁 Beneficios Exclusivos de tu Cuenta
+                    </h3>
+                    
+                    <div style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+                        <span style="font-size: 20px;">🎟️</span>
+                        <div>
+                            <strong style="color: #fff; font-size: 13.5px;">Código de Preventa Tour 2026:</strong>
+                            <div style="margin-top: 3px;">
+                                <code style="background: rgba(224, 36, 179, 0.25); color: #f472b6; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 13px;">TINI2026-FANVIP</code>
+                                <span style="font-size: 12px; color: #aaa; margin-left: 6px;">(Válido para Salta y Movistar Arena)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+                        <span style="font-size: 20px;">⭐</span>
+                        <div>
+                            <strong style="color: #fff; font-size: 13.5px;">Sorteo Meet & Greet:</strong>
+                            <p style="margin: 2px 0 0 0; font-size: 12.5px; color: #cbd5e1;">
+                                Tu cuenta participa automáticamente en el sorteo para conocer a Tini en el backstage.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                        <span style="font-size: 20px;">🎵</span>
+                        <div>
+                            <strong style="color: #fff; font-size: 13.5px;">Descuento en Tienda Oficial:</strong>
+                            <p style="margin: 2px 0 0 0; font-size: 12.5px; color: #cbd5e1;">
+                                15% OFF en remeras, vinilos y hoodies oficiales de Cupido.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.08);">
+                    <a href="index.html#tour" style="color: #c084fc; text-decoration: none; font-size: 13px; font-weight: bold;">
+                        Ver fechas de conciertos del Tour 2026 &rarr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SECCIÓN DE HISTORIAL DE PEDIDOS Y COMPRAS -->
+        <div style="background: rgba(255,255,255,0.05); border-radius: 14px; border: 1px solid rgba(255,255,255,0.1); padding: 25px; margin-bottom: 35px;">
+            <h2 style="color: #fff; font-size: 20px; margin-top: 0; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+                <span>📦</span> Mis Compras y Pedidos de Merchandising
+            </h2>
+
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <div style="background: rgba(0,0,0,0.3); border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); padding: 18px;">
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 12px; margin-bottom: 14px;">
+                        <div>
+                            <span style="font-weight: bold; color: var(--accent-pink, #e024b3); font-size: 15px;">
+                                Pedido #PED-0001
+                            </span>
+                            <span style="font-size: 12.5px; color: #94a3b8; margin-left: 10px;">
+                                📅 19/11/2026 18:30 hs
+                            </span>
+                        </div>
+                        <div>
+                            <span style="background: #10b98125; color: #10b981; border: 1px solid #10b981; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; text-transform: uppercase;">
+                                ● PAGADO
+                            </span>
+                            <span style="margin-left: 15px; font-weight: bold; color: #fff; font-size: 16px;">
+                                $67.000,00 ARS
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Detalle de artículos comprados -->
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px;">
+                            <img src="merch.jpg" alt="Remera" style="width: 38px; height: 38px; object-fit: cover; border-radius: 6px;">
+                            <div style="flex: 1;">
+                                <strong>Remera Tour 2026 Oficial</strong>
+                                <span style="color: #94a3b8; font-size: 12px; margin-left: 8px;">(x1)</span>
+                            </div>
+                            <div style="color: #4ade80; font-weight: 600;">
+                                $25.000,00
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; font-size: 13.5px;">
+                            <img src="shoes.webp" alt="Hoodie" style="width: 38px; height: 38px; object-fit: cover; border-radius: 6px;">
+                            <div style="flex: 1;">
+                                <strong>Hoodie Oficial TINI Cupido</strong>
+                                <span style="color: #94a3b8; font-size: 12px; margin-left: 8px;">(x1)</span>
+                            </div>
+                            <div style="color: #4ade80; font-weight: 600;">
+                                $42.000,00
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ACCESOS RÁPIDOS A TODAS LAS SECCIONES DE LA PÁGINA -->
+        <div style="background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); padding: 22px;">
+            <h3 style="color: #fff; font-size: 16px; margin-top: 0; margin-bottom: 15px;">
+                🚀 Accesos Rápidos a la Plataforma
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
+                <a href="index.html#inicio" style="background: rgba(255,255,255,0.06); padding: 12px; border-radius: 8px; text-decoration: none; color: #fff; font-size: 13px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                    🏠 Inicio Web
+                </a>
+                <a href="index.html#musica" style="background: rgba(255,255,255,0.06); padding: 12px; border-radius: 8px; text-decoration: none; color: #fff; font-size: 13px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                    🎵 Discografía
+                </a>
+                <a href="index.html#tour" style="background: rgba(255,255,255,0.06); padding: 12px; border-radius: 8px; text-decoration: none; color: #fff; font-size: 13px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                    🎫 Tour Dates 2026
+                </a>
+                <a href="index.html#tienda" style="background: rgba(255,255,255,0.06); padding: 12px; border-radius: 8px; text-decoration: none; color: #fff; font-size: 13px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                    👕 Tienda Oficial
+                </a>
+                <a href="proyecto.html" style="background: rgba(255,255,255,0.06); padding: 12px; border-radius: 8px; text-decoration: none; color: #fff; font-size: 13px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                    📄 Proyecto Técnico
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div style="text-align: center; padding: 30px 15px; margin-top: 50px; border-top: 1px solid rgba(224, 36, 179, 0.3); background: rgba(10, 2, 13, 0.95);">
+            <p style="margin: 0 0 6px 0; font-size: 15px;">&copy; 2026 <strong>TINI Stoessel Fan Club Oficial</strong> &bull; Sitio web desarrollado por <strong>Frias Abigail</strong></p>
+            <p style="font-size: 13px; color: #d8b4fe; margin: 0 0 4px 0;">Materia: Adaptación al ambiente de trabajo &bull; Programación Web</p>
+            <p style="font-size: 12px; color: #888; margin: 0;">Contacto: <a href="mailto:abigailfrias35@gmail.com" style="color: var(--accent-pink, #e024b3); text-decoration: none;">abigailfrias35@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="js.js"></script>
+</body>
+</html>

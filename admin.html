@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración Total - TINI Stoessel</title>
+    <meta name="description" content="Panel de control integral para administradores con acceso a toda la página y gestión CRUD de Merchandising. Desarrollado por Frias Abigail.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR DE HORA EN VIVO -->
+    <div id="reloj" style="font-size: 15px; font-weight: bold; color: var(--accent-pink, #e024b3); text-align: center; padding: 6px 0; background: rgba(0,0,0,0.5);"></div>
+
+    <!-- ENCABEZADO Y NAVEGACIÓN -->
+    <header>
+        <div class="logo">
+            <a href="index.html" style="color: inherit; text-decoration: none;"><span>💜</span> TINI</a>
+        </div>
+        <nav>
+            <a href="index.html#inicio">Inicio</a>
+            <a href="index.html#bio">Bio</a>
+            <a href="index.html#musica">Música</a>
+            <a href="index.html#tour">Tour</a>
+            <a href="index.html#tienda">Tienda</a>
+            <a href="panel_usuario.html" style="color: #c084fc;">💜 Mi Panel Fan</a>
+            <a href="admin.html" class="active" style="color: #00ff88; font-weight: bold;">⭐ Panel Admin</a>
+            <a href="proyecto.html">Proyecto</a>
+        </nav>
+    </header>
+
+    <div style="text-align: center; margin-top: 15px;">
+        <button id="toggle-tema" class="btn-tema" onclick="toggleDarkMode()">☀️ Cambiar Modo</button>
+    </div>
+
+    <main style="max-width: 1200px; margin: 30px auto; padding: 0 20px;">
+
+        <!-- BARRA SUPERIOR DE ACCESO RÁPIDO A TODA LA PÁGINA WEB -->
+        <div style="background: rgba(0,0,0,0.4); border-radius: 12px; padding: 15px 20px; border: 1px solid rgba(224, 36, 179, 0.3); margin-bottom: 25px;">
+            <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #f472b6; font-weight: bold; margin-bottom: 8px;">
+                🌐 Navegación Rápida a Toda la Página (Acceso Total de Administrador)
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <a href="index.html#inicio" style="background: rgba(255,255,255,0.08); color: #fff; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 12.5px;">🏠 Inicio Web</a>
+                <a href="index.html#bio" style="background: rgba(255,255,255,0.08); color: #fff; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 12.5px;">📖 Biografía</a>
+                <a href="index.html#musica" style="background: rgba(255,255,255,0.08); color: #fff; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 12.5px;">🎵 Discografía</a>
+                <a href="index.html#tour" style="background: rgba(255,255,255,0.08); color: #fff; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 12.5px;">🎫 Tour 2026</a>
+                <a href="index.html#tienda" style="background: rgba(255,255,255,0.08); color: #fff; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 12.5px;">🛍️ Tienda Oficial</a>
+                <a href="panel_usuario.html" style="background: rgba(192, 132, 252, 0.2); color: #d8b4fe; border: 1px solid #c084fc; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 12.5px; font-weight: bold;">💜 Ver Panel Fan Club</a>
+                <a href="index.html#fanclub" style="background: rgba(255,255,255,0.08); color: #fff; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 12.5px;">📝 Registro Fan Club</a>
+                <a href="proyecto.html" style="background: rgba(255,255,255,0.08); color: #fff; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 12.5px;">📄 Ficha Técnica</a>
+            </div>
+        </div>
+
+        <!-- ENCABEZADO PRINCIPAL DEL PANEL -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; border-bottom: 2px solid var(--accent-pink, #e024b3); padding-bottom: 15px; margin-bottom: 25px;">
+            <div>
+                <h1 style="margin: 0; color: #fff; font-size: 26px;">
+                    ⭐ Panel de Control del Administrador
+                </h1>
+                <p style="margin: 5px 0 0 0; color: #cbd5e1; font-size: 14px;">
+                    Sesión iniciada como: <strong>Frias Abigail</strong> 
+                    (Rol: <span style="color:#00ff88; font-weight:bold;">👑 Administrador General</span>)
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button onclick="alert('En el servidor local PHP podrás agregar productos con persistencia en MySQL');" class="btn-ticket" style="background: #10b981; border: none; cursor: pointer; font-size: 13px; padding: 10px 16px;">+ Nuevo Producto</button>
+                <a href="index.html" class="btn-ticket" style="background: #ef4444; text-decoration: none; font-size: 13px; padding: 10px 16px;">Cerrar Sesión</a>
+            </div>
+        </div>
+
+        <!-- TARJETAS DE MÉTRICAS GLOBALES (KPIs) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 30px;">
+            
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 15px;">
+                <div style="font-size: 36px; background: rgba(224, 36, 179, 0.2); padding: 12px; border-radius: 10px;">🛍️</div>
+                <div>
+                    <div style="font-size: 12px; color: #cbd5e1; text-transform: uppercase;">Catálogo Activo</div>
+                    <div style="font-size: 26px; font-weight: bold; color: #fff;">6 productos</div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 15px;">
+                <div style="font-size: 36px; background: rgba(59, 130, 246, 0.2); padding: 12px; border-radius: 10px;">👥</div>
+                <div>
+                    <div style="font-size: 12px; color: #cbd5e1; text-transform: uppercase;">Usuarios Registrados</div>
+                    <div style="font-size: 26px; font-weight: bold; color: #fff;">3 cuentas</div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 15px;">
+                <div style="font-size: 36px; background: rgba(234, 179, 8, 0.2); padding: 12px; border-radius: 10px;">📦</div>
+                <div>
+                    <div style="font-size: 12px; color: #cbd5e1; text-transform: uppercase;">Pedidos Totales</div>
+                    <div style="font-size: 26px; font-weight: bold; color: #fff;">1 orden</div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 15px;">
+                <div style="font-size: 36px; background: rgba(16, 185, 129, 0.2); padding: 12px; border-radius: 10px;">💵</div>
+                <div>
+                    <div style="font-size: 12px; color: #cbd5e1; text-transform: uppercase;">Ventas Pagadas</div>
+                    <div style="font-size: 24px; font-weight: bold; color: #4ade80;">$67.000,00 ARS</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MÓDULO 1: CRUD PRODUCTOS -->
+        <div style="background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); overflow-x: auto; padding: 5px; margin-bottom: 30px;">
+            <div style="padding: 15px 15px 5px 15px;">
+                <h3 style="color: #fff; margin: 0; font-size: 17px;">🛍️ Catálogo de Merchandising Oficial (Módulo CRUD)</h3>
+            </div>
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px; margin-top: 10px;">
+                <thead>
+                    <tr style="background: rgba(0,0,0,0.4); border-bottom: 1px solid rgba(255,255,255,0.15); color: #c084fc;">
+                        <th style="padding: 14px 15px;">ID</th>
+                        <th style="padding: 14px 15px;">Foto</th>
+                        <th style="padding: 14px 15px;">Título del Artículo</th>
+                        <th style="padding: 14px 15px;">Categoría</th>
+                        <th style="padding: 14px 15px;">Precio</th>
+                        <th style="padding: 14px 15px;">Stock</th>
+                        <th style="padding: 14px 15px; text-align: center;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px 15px; font-weight: bold; color: var(--accent-pink, #e024b3);">#1</td>
+                        <td style="padding: 12px 15px;"><img src="merch.jpg" alt="Remera" style="width: 45px; height: 45px; object-fit: cover; border-radius: 8px;"></td>
+                        <td style="padding: 12px 15px; font-weight: 600;">Remera Tour 2026 Oficial<div style="font-size: 11.5px; color: #94a3b8; font-weight: normal;">Remera 100% algodón con fechas de gira</div></td>
+                        <td style="padding: 12px 15px; color: #38bdf8;">Merchandising Oficial</td>
+                        <td style="padding: 12px 15px; color: #4ade80; font-weight: bold;">$25.000,00</td>
+                        <td style="padding: 12px 15px;"><span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 12px; font-size: 12px;">150 un.</span></td>
+                        <td style="padding: 12px 15px; text-align: center;"><button onclick="alert('Edición de producto disponible en el servidor PHP local');" style="background: #eab308; color: #000; border:none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; cursor:pointer;">Editar</button></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px 15px; font-weight: bold; color: var(--accent-pink, #e024b3);">#2</td>
+                        <td style="padding: 12px 15px;"><img src="shoes.webp" alt="Hoodie" style="width: 45px; height: 45px; object-fit: cover; border-radius: 8px;"></td>
+                        <td style="padding: 12px 15px; font-weight: 600;">Hoodie Oficial TINI Cupido<div style="font-size: 11.5px; color: #94a3b8; font-weight: normal;">Buzo frizado color rosa lavanda con capucha</div></td>
+                        <td style="padding: 12px 15px; color: #38bdf8;">Merchandising Oficial</td>
+                        <td style="padding: 12px 15px; color: #4ade80; font-weight: bold;">$42.000,00</td>
+                        <td style="padding: 12px 15px;"><span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 12px; font-size: 12px;">80 un.</span></td>
+                        <td style="padding: 12px 15px; text-align: center;"><button onclick="alert('Edición de producto disponible en el servidor PHP local');" style="background: #eab308; color: #000; border:none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; cursor:pointer;">Editar</button></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px 15px; font-weight: bold; color: var(--accent-pink, #e024b3);">#3</td>
+                        <td style="padding: 12px 15px;"><img src="cd.webp" alt="CD" style="width: 45px; height: 45px; object-fit: cover; border-radius: 8px;"></td>
+                        <td style="padding: 12px 15px; font-weight: 600;">CD Cupido Edición Deluxe<div style="font-size: 11.5px; color: #94a3b8; font-weight: normal;">Álbum original en formato físico con póster</div></td>
+                        <td style="padding: 12px 15px; color: #38bdf8;">Discografía & Vinilos</td>
+                        <td style="padding: 12px 15px; color: #4ade80; font-weight: bold;">$18.000,00</td>
+                        <td style="padding: 12px 15px;"><span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 12px; font-size: 12px;">200 un.</span></td>
+                        <td style="padding: 12px 15px; text-align: center;"><button onclick="alert('Edición de producto disponible en el servidor PHP local');" style="background: #eab308; color: #000; border:none; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; cursor:pointer;">Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- MÓDULO 2: GESTIÓN DE PEDIDOS -->
+        <div style="background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); overflow-x: auto; padding: 5px; margin-bottom: 30px;">
+            <div style="padding: 15px 15px 5px 15px;">
+                <h3 style="color: #fff; margin: 0; font-size: 17px;">📦 Gestión de Pedidos de Clientes</h3>
+            </div>
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px; margin-top: 10px;">
+                <thead>
+                    <tr style="background: rgba(0,0,0,0.4); border-bottom: 1px solid rgba(255,255,255,0.15); color: #c084fc;">
+                        <th style="padding: 14px 15px;">N° Pedido</th>
+                        <th style="padding: 14px 15px;">Cliente</th>
+                        <th style="padding: 14px 15px;">Email</th>
+                        <th style="padding: 14px 15px;">Total</th>
+                        <th style="padding: 14px 15px;">Fecha</th>
+                        <th style="padding: 14px 15px;">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px 15px; font-weight: bold; color: var(--accent-pink, #e024b3);">#PED-0001</td>
+                        <td style="padding: 12px 15px; font-weight: 600;">Marta Docente</td>
+                        <td style="padding: 12px 15px; color: #94a3b8;">marta@educacion.gob.ar</td>
+                        <td style="padding: 12px 15px; color: #4ade80; font-weight: bold;">$67.000,00 ARS</td>
+                        <td style="padding: 12px 15px; font-size: 12.5px; color: #cbd5e1;">19/11/2026 18:30</td>
+                        <td style="padding: 12px 15px;">
+                            <span style="background: #10b98125; color: #10b981; border: 1px solid #10b981; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; text-transform: uppercase;">
+                                ● PAGADO
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- MÓDULO 3: GESTIÓN DE USUARIOS Y ROLES -->
+        <div style="background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); overflow-x: auto; padding: 5px;">
+            <div style="padding: 15px 15px 5px 15px;">
+                <h3 style="color: #fff; margin: 0; font-size: 17px;">👥 Cuentas de Usuarios y Asignación de Roles</h3>
+            </div>
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px; margin-top: 10px;">
+                <thead>
+                    <tr style="background: rgba(0,0,0,0.4); border-bottom: 1px solid rgba(255,255,255,0.15); color: #c084fc;">
+                        <th style="padding: 14px 15px;">ID</th>
+                        <th style="padding: 14px 15px;">Nombre</th>
+                        <th style="padding: 14px 15px;">Email</th>
+                        <th style="padding: 14px 15px;">Rol Actual</th>
+                        <th style="padding: 14px 15px;">Fecha Alta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px 15px; font-weight: bold; color: var(--accent-pink, #e024b3);">#1</td>
+                        <td style="padding: 12px 15px; font-weight: 600;">Abigail Frías</td>
+                        <td style="padding: 12px 15px; color: #94a3b8;">abigailfrias35@gmail.com</td>
+                        <td style="padding: 12px 15px;"><span style="background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid #10b981; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold;">👑 Administrador</span></td>
+                        <td style="padding: 12px 15px; color: #cbd5e1; font-size: 12.5px;">19/11/2026</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px 15px; font-weight: bold; color: var(--accent-pink, #e024b3);">#2</td>
+                        <td style="padding: 12px 15px; font-weight: 600;">Marta Docente</td>
+                        <td style="padding: 12px 15px; color: #94a3b8;">marta@educacion.gob.ar</td>
+                        <td style="padding: 12px 15px;"><span style="background: rgba(192, 132, 252, 0.2); color: #c084fc; border: 1px solid #c084fc; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold;">💜 Fan Club (Usuario)</span></td>
+                        <td style="padding: 12px 15px; color: #cbd5e1; font-size: 12.5px;">19/11/2026</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px 15px; font-weight: bold; color: var(--accent-pink, #e024b3);">#3</td>
+                        <td style="padding: 12px 15px; font-weight: 600;">Tinista Salta</td>
+                        <td style="padding: 12px 15px; color: #94a3b8;">tinista_salta@gmail.com</td>
+                        <td style="padding: 12px 15px;"><span style="background: rgba(192, 132, 252, 0.2); color: #c084fc; border: 1px solid #c084fc; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold;">💜 Fan Club (Usuario)</span></td>
+                        <td style="padding: 12px 15px; color: #cbd5e1; font-size: 12.5px;">19/11/2026</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div style="text-align: center; padding: 30px 15px; margin-top: 50px; border-top: 1px solid rgba(224, 36, 179, 0.3); background: rgba(10, 2, 13, 0.95);">
+            <p style="margin: 0 0 6px 0; font-size: 15px;">&copy; 2026 <strong>TINI Stoessel Fan Club Oficial</strong> &bull; Sitio web desarrollado por <strong>Frias Abigail</strong></p>
+            <p style="font-size: 13px; color: #d8b4fe; margin: 0 0 4px 0;">Materia: Adaptación al ambiente de trabajo &bull; Programación Web</p>
+            <p style="font-size: 12px; color: #888; margin: 0;">Contacto: <a href="mailto:abigailfrias35@gmail.com" style="color: var(--accent-pink, #e024b3); text-decoration: none;">abigailfrias35@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="js.js"></script>
+</body>
+</html>
