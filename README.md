@@ -1,100 +1,77 @@
-# TINI - Plataforma Web Oficial y Tienda de Merchandising
+# TINI - Plataforma Web Oficial, Fan Club y Tienda de Merchandising
 
 * **Materia:** Adaptación al ambiente de trabajo &bull; Programación Web
 * **Estudiante:** Frias Abigail
 * **Fecha de Entrega:** 2026
 * **Repositorio GitHub:** [https://github.com/abigailfrias35-art/tini](https://github.com/abigailfrias35-art/tini)
+* **Demo en Vivo (GitHub Pages):** [https://abigailfrias35-art.github.io/tini/](https://abigailfrias35-art.github.io/tini/)
+* **Despliegue en Vercel (1-Click Deploy):** [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fabigailfrias35-art%2Ftini)
 
 ---
 
 ## 1. Descripción del Proyecto
 
-Plataforma web dinámica desarrollada en torno a la figura artística de **TINI (Martina Stoessel)**. El proyecto evolucionó de una maqueta estática inicial (HTML5/CSS3) a una aplicación web completa y modularizada con backend en **PHP 8.x** y base de datos relacional **MySQL**.
-
-El sitio integra:
-* Página principal con biografía, discografía completa, fechas de conciertos del Tour 2026 y tienda de merchandising oficial.
-* Arquitectura modular con **Server Side Includes (SSI)** y renderizado del lado del servidor (**SSR**).
-* Procesamiento seguro de formularios con métodos **POST** y **GET** con protección contra **Cross-Site Scripting (XSS)**.
-* Modelo de datos relacional normalizado hasta **Tercera Forma Normal (3FN)**.
-* Sistema de autenticación con **hashing BCRYPT**, sesiones protegidas y control de acceso por roles (`admin` y `usuario`).
-* Panel de administración con módulo **CRUD completo** (Altas, Bajas, Modificaciones y Consultas) para productos y merchandising.
+Plataforma web integral desarrollada en torno a la artista internacional **TINI (Martina Stoessel)**. El proyecto cuenta con:
+1. **Frontend Interactivo y Responsive:** Versión en vivo en producción (accesible vía GitHub Pages y Vercel) con carrusel de fotos, selector de tema oscuro/claro, reloj dinámico, sección biográfica, catálogo de discografía, venta de tickets para el Tour 2026 y tienda de merchandising.
+2. **Backend PHP 8.x con Modularización (SSI/SSR):** Vistas dinámicas con inyección de títulos y plantillas reutilizables (`header.php`, `nav.php`, `footer.php`).
+3. **Formularios Seguros (POST & GET):** Sanitización estricta contra ataques XSS con `htmlspecialchars()`, validaciones tipadas y filtros sticky.
+4. **Base de Datos Normalizada (MySQL 3FN):** Esquema relacional `tini_db` con 6 tablas, integridad referencial con claves foráneas e índices de rendimiento.
+5. **Persistencia PDO & Autenticación:** Consultas preparadas anti SQL Injection, hashing seguro con BCRYPT y control de sesiones con roles (`admin` y `usuario`).
 
 ---
 
-## 2. Tecnologías Utilizadas
+## 2. Base de Datos Oficial (`tini_db.sql`)
 
-* **Frontend:** HTML5 semántico, CSS3 personalizado (tema oscuro/claro y paleta oficial violeta/rosa de Tini), JavaScript interactivo (carrusel de imágenes y validaciones).
-* **Backend:** PHP 8.x (Programación estructurada y modular con PDO).
-* **Base de Datos:** MySQL 8.x / MariaDB (Motor transaccional InnoDB con claves foráneas e índices).
-* **Seguridad:** OWASP Top 10 (Sentencias Preparadas anti SQL Injection, sanitización XSS con `htmlspecialchars()`, protección contra Session Fixation con `session_regenerate_id(true)` y contraseñas con BCRYPT).
-* **Entorno Servidor Local:** XAMPP / Laragon (Apache + MySQL).
-* **Control de Versiones:** Git y GitHub (Flujo de ramas `feature/migracion-php-ssi` integradas a `main`).
+El repositorio incluye el archivo consolidado y documentado listo para importar en phpMyAdmin:
+* **Archivo SQL:** [`tini_db.sql`](tini_db.sql)
+* **Motor:** InnoDB (MySQL 8.x / MariaDB)
+* **Juego de Caracteres:** `utf8mb4_unicode_ci`
 
----
+### Tablas Incluidas:
+* `roles`: Niveles de acceso (Admin y Usuario Fan Club).
+* `usuarios`: Credenciales con BCRYPT y relación con roles.
+* `categorias`: Familias de productos (Merchandising, Discografía, Conciertos).
+* `productos`: Catálogo con stock, precios e imágenes.
+* `pedidos`: Órdenes de compra generadas.
+* `detalle_pedidos`: Detalle de artículos comprados (relación N:M).
 
-## 3. Estructura del Repositorio
-
-```plaintext
-tini/
-├── .env.example              # Plantilla de configuración de entorno
-├── .gitignore                # Exclusión de .env y archivos temporales
-├── auth_guard.php            # Guardián de rutas y verificación de roles ($_SESSION)
-├── contacto.php              # Centro de contacto y buscador interactivo (GET / POST)
-├── index.php                 # Página de inicio modularizada (SSR)
-├── proyecto.php              # Información técnica del proyecto
-├── login.php                 # Autenticación segura y regeneración de sesión
-├── registro.php              # Registro con hash BCRYPT en base de datos
-├── logout.php                # Destrucción segura de sesión y cookies
-│
-├── config/
-│   ├── env.php               # Carga de variables de entorno globales
-│   └── conexion.php          # Instancia segura PDO con try-catch
-│
-├── includes/
-│   ├── header.php            # <head>, metadatos y $titulo_pagina dinámico
-│   ├── nav.php               # Menú de navegación con resaltado activo
-│   └── footer.php            # Pie de página y cierre con scripts
-│
-├── admin/                    # Módulo CRUD con acceso restringido
-│   ├── index.php             # Listado de productos de TINI (Read)
-│   ├── crear.php             # Formulario de alta con Prepared Statements (Create)
-│   ├── editar.php            # Edición de productos (Update)
-│   ├── eliminar.php          # Baja física de registros (Delete)
-│   └── README.md             # Documentación del módulo CRUD
-│
-├── clase5/                   # TP Clase 5: Formularios POST y GET
-│   ├── index.php             # Formularios con sanitización y persistencia
-│   └── README.md             # Documentación técnica de la Clase 5
-│
-├── tp6/                      # TP 6: Base de Datos y Normalización
-│   ├── NORMALIZACION.md      # Desarrollo teórico de 1FN, 2FN y 3FN
-│   ├── schema.sql            # Script DDL de creación de tablas e índices
-│   ├── consultas.sql         # Script DML con consultas de prueba CRUD
-│   └── README.md             # Documentación del esquema
-│
-└── css/
-    └── styles.css            # Hoja de estilos del proyecto
-```
+### Datos de Prueba Pre-cargados:
+* **Administrador:** `abigailfrias35@gmail.com` | Contraseña: `Admin1234!`
+* **Usuario Fan Club:** `marta@educacion.gob.ar` | Contraseña: `Admin1234!`
 
 ---
 
-## 4. Instrucciones de Instalación y Ejecución Local
+## 3. Despliegue en la Nube (Vercel & GitHub Pages)
+
+### Opción A: Despliegue en Vercel
+El repositorio incluye el archivo de configuración `vercel.json`:
+1. Ingresar a [https://vercel.com/new](https://vercel.com/new).
+2. Conectar tu cuenta de GitHub e importar el repositorio `abigailfrias35-art/tini`.
+3. Hacer clic en **Deploy**. En menos de 30 segundos obtendrás tu URL pública de producción (por ejemplo: `https://tini-abigail.vercel.app`).
+4. O mediante el botón de un clic: [Desplegar en Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fabigailfrias35-art%2Ftini).
+
+### Opción B: Demo en Vivo en GitHub Pages
+La página estática se encuentra publicada y activa en:
+👉 **[https://abigailfrias35-art.github.io/tini/](https://abigailfrias35-art.github.io/tini/)**
+
+---
+
+## 4. Instrucciones para Ejecución Local (PHP + MySQL con XAMPP / Laragon)
 
 1. **Clonar el repositorio:**
    ```bash
    git clone https://github.com/abigailfrias35-art/tini.git
    ```
-2. **Copiar el proyecto al servidor local:**
-   * En **XAMPP**: mover la carpeta `tini` a `C:\xampp\htdocs\tini`.
-   * En **Laragon**: mover la carpeta `tini` a `C:\laragon\www\tini`.
-3. **Configurar el archivo de entorno:**
-   * Duplicar `.env.example` y renombrarlo como `.env`.
-   * Ajustar credenciales de base de datos si fuera necesario.
-4. **Importar la Base de Datos:**
-   * Abrir **phpMyAdmin** (`http://localhost/phpmyadmin`).
-   * Importar y ejecutar el archivo [`tp6/schema.sql`](tp6/schema.sql).
-   * Opcionalmente ejecutar [`tp6/consultas.sql`](tp6/consultas.sql) para cargar datos de prueba.
-5. **Acceder a la aplicación:**
+2. **Copiar la carpeta al directorio del servidor web local:**
+   * **XAMPP:** `C:\xampp\htdocs\tini`
+   * **Laragon:** `C:\laragon\www\tini`
+3. **Importar la Base de Datos en phpMyAdmin:**
+   * Abrir `http://localhost/phpmyadmin` en el navegador.
+   * Ir a la pestaña **Importar**.
+   * Seleccionar el archivo `tini_db.sql` y hacer clic en **Importar**.
+4. **Configurar el archivo de entorno:**
+   * Copiar `.env.example` a `.env` y verificar credenciales de MySQL (por defecto `DB_USER=root`, `DB_PASS=""`).
+5. **Navegar en el navegador local:**
    * Sitio público: `http://localhost/tini/index.php`
-   * Módulo Clase 5 (Formularios): `http://localhost/tini/clase5/index.php`
-   * Panel Administrador: `http://localhost/tini/login.php` (Usuario: `abigailfrias35@gmail.com` | Clave: `Admin1234!`)
+   * Módulo de Formularios (Clase 5): `http://localhost/tini/clase5/index.php`
+   * Panel de Administración CRUD: `http://localhost/tini/login.php`

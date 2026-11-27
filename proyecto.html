@@ -1,383 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Proyecto</title>
-</head>
-<body>
-	<h1>Proyecto</h1>
-</body>
-</html>
-<link rel="stylesheet" href="css/styles.css">
-<!DOCTYPE html>
-<html lang="es">
-
-<body>
-    <header>
-        <div class="logo"><span>👤</span> TINI</div>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#bio">Bio</a>
-            <a href="#musica">Música</a>
-            <a href="#tour">Tour</a>
-            <a href="#tienda">Tienda</a>
-        </nav>
-    </header>
-</header>
-    <!-- 1. INICIO (HERO) -->
-    <section id="inicio">
-        <img src="inicio.webp" alt="Tini en el escenario" class="hero-img">
-    
-        <h1 class="hero-title">TINI STOESSEL</h1>
-        <p class="hero-subtitle">Pop • Trap • Latin • Internacional</p>
-        
-        <!-- ENLACE EXTERNO A SPOTIFY -->
-        <br>
-        <a href="https://open.spotify.com/artist/7vXDAI8JlvVDMNnIQOqw59" target="_blank" class="btn-ticket">🎧 Escuchar en Spotify</a>
-    </section>
-
-    <!-- 2. BIOGRAFÍA -->
-    <section id="bio">
-        <h2 class="section-title">Biografía</h2>
-        <div class="bio-container">
-            <div class="bio-text">
-                <p><span style="color:var(--accent-pink); font-weight:bold;">Martina Stoessel</span>, conocida artísticamente como TINI, es una cantante, actriz y compositora argentina que ha conquistado el corazón de millones alrededor del mundo.</p>
-                <p>Desde su inicio en <span style="color:#c084fc;">Violetta</span> hasta convertirse en una de las artistas latinas más influyentes, TINI ha demostrado una evolución artística excepcional, fusionando pop, trap y ritmos urbanos con su estilo único.</p>
-                <p>Con colaboraciones junto a artistas internacionales como Sebastián Yatra, Karol G, y Alejandro Sanz, TINI ha consolidado su carrera en la escena musical global, acumulando millones de reproducciones y premios internacionales.</p>
-            </div>
-            <div class="bio-img-container">
-                <img src="concierto.webp" alt="Show de Tini" class="bio-img">
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. DISCOGRAFÍA -->
-    <section id="musica">
-        <h2 class="section-title">Discografía</h2>
-        <div class="albums-grid">
-            <div class="album-card">
-                <div class="album-cover">TINI</div>
-                <div class="album-title">TINI</div>
-                <div class="album-year">2016</div>
-            </div>
-            <div class="album-card">
-                <div class="album-cover">TINI</div>
-                <div class="album-title">Quiero Volver</div>
-                <div class="album-year">2018</div>
-            </div>
-            <div class="album-card">
-                <div class="album-cover">TINI</div>
-                <div class="album-title">TINI TINI TINI</div>
-                <div class="album-year">2020</div>
-            </div>
-            <div class="album-card">
-                <div class="album-cover">TINI</div>
-                <div class="album-title">Cupido</div>
-                <div class="album-year">2023</div>
-            </div>
-            <div class="album-card">
-                <div class="album-cover">TINI</div>
-                <div class="album-title">Un Mechón de Pelo</div>
-                <div class="album-year">2024</div>
-            </div>
-            <div class="album-card">
-                <div class="album-cover">TINI</div>
-                <div class="album-title">Singles</div>
-                <div class="album-year">2024</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. TOUR DATES -->
-    <section id="tour">
-        <h2 class="section-title">Tour Dates</h2>
-        
-        <div class="tour-item">
-            <div class="tour-date">10 AGO 2026</div>
-            <div class="tour-location">
-                <div class="tour-city">Buenos Aires, Argentina</div>
-                <div class="tour-venue">Estadio River Plate</div>
-            </div>
-           <div class="tour-action">
-                <!-- ENLACE EXTERNO A UNA TICKETERA -->
-                <a href="https://www.allaccess.com.ar/" target="_blank" class="btn-ticket">Comprar Tickets</a>
-            </div>
-            </div>
-        </div>
-
-        <div class="tour-item">
-            <div class="tour-date">18 AGO 2026</div>
-            <div class="tour-location">
-                <div class="tour-city">Santiago, Chile</div>
-                <div class="tour-venue">Movistar Arena</div>
-            </div>
-            <div class="tour-action">
-                <button class="btn-ticket" onclick="alert('Redirigiendo a compra de entradas...')">Comprar Tickets</button>
-            </div>
-        </div>
-
-        <div class="tour-item">
-            <div class="tour-date">25 AGO 2026</div>
-            <div class="tour-location">
-                <div class="tour-city">Lima, Perú</div>
-                <div class="tour-venue">Arena Perú</div>
-            </div>
-            <div class="tour-action">
-                <button class="btn-ticket" onclick="alert('Redirigiendo a compra de entradas...')">Comprar Tickets</button>
-            </div>
-        </div>
-
-        <div class="tour-item">
-            <div class="tour-date">05 SEP 2026</div>
-            <div class="tour-location">
-                <div class="tour-city">Ciudad de México, México</div>
-                <div class="tour-venue">Foro Sol</div>
-            </div>
-            <div class="tour-action">
-                <button class="btn-ticket" onclick="alert('Redirigiendo a compra de entradas...')">Comprar Tickets</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. TIENDA OFICIAL -->
-    <section id="tienda">
-        <h2 class="section-title">Tienda Oficial</h2>
-        <div class="shop-grid">
-            <div class="shop-item">
-               <img src="merch.jpg" alt="Merch Tour 2026" class="shop-img">
-                <div class="shop-info">
-                    <div class="shop-title">Remera Tour 2026</div>
-                    <button class="btn-shop" onclick="alert('Producto agregado al carrito')">Comprar Ahora</button>
-                </div>
-            </div>
-            <div class="shop-item">
-                <img src="shoes.webp" alt="shouse Tini" class="shop-img">
-                <div class="shop-info">
-                    <div class="shop-title">Hoodie TINI</div>
-                    <button class="btn-shop" onclick="alert('Producto agregado al carrito')">Comprar Ahora</button>
-                </div>
-            </div>
-            <div class="shop-item">
-            
-                    <img src="cd.webp" alt="CD de Tini" class="shop-img">
-                    <button class="btn-shop" onclick="alert('Producto agregado al carrito')">Comprar Ahora</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. FAN CLUB -->
-   <!-- 6. FAN CLUB Y REGISTRO (Actualizado para TP Formularios) -->
-    <section id="fanclub">
-        <h2 class="section-title">Registro al Fan Club</h2>
-        <p class="fanclub-desc">Únete completando todos tus datos. Los campos con * son obligatorios.</p>
-        
-        <div class="form-card">
-            <!-- 1. Etiqueta form con action y method POST -->
-            <form action="/registrar_usuario.php" method="POST">
-                
-                <!-- Input de tipo Texto con validación minlength, maxlength y pattern -->
-                <div class="form-group">
-                    <label for="usuario">Nombre de Usuario * (Solo letras y números):</label>
-                    <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Ej: Tinista2026" required minlength="5" maxlength="15" pattern="[a-zA-Z0-9]+">
-                </div>
-
-                <!-- Input de tipo Email -->
-                <div class="form-group">
-                    <label for="correo">Correo Electrónico *:</label>
-                    <input type="email" id="correo" name="correo" class="form-control" placeholder="tu@email.com" required>
-                </div>
-
-                <!-- Input de tipo Password -->
-                <div class="form-group">
-                    <label for="pass">Contraseña * (Mínimo 8 caracteres):</label>
-                    <input type="password" id="pass" name="pass" class="form-control" required minlength="8">
-                </div>
-
-                <!-- Input de tipo Number con min y max -->
-                <div class="form-group">
-                    <label for="edad">Edad *:</label>
-                    <input type="number" id="edad" name="edad" class="form-control" min="13" max="99" placeholder="Debes tener entre 13 y 99 años" required>
-                </div>
-
-                <!-- Input de tipo Date -->
-                <div class="form-group">
-                    <label for="fecha">Fecha de nacimiento *:</label>
-                    <input type="date" id="fecha" name="fecha" class="form-control" required>
-                </div>
-
-                <!-- Select y Option -->
-                <div class="form-group">
-                    <label for="pais_origen">País *:</label>
-                    <select id="pais_origen" name="pais_origen" class="form-control" required>
-                        <option value="">Selecciona tu país...</option>
-                        <option value="ar">Argentina</option>
-                        <option value="cl">Chile</option>
-                        <option value="mx">México</option>
-                        <option value="es">España</option>
-                    </select>
-                </div>
-
-                <!-- Radio Buttons (Selección única) -->
-                <div class="form-group">
-                    <label>¿Cuál es tu era favorita de Tini? *</label><br>
-                    <input type="radio" id="era_violetta" name="era" value="violetta" required>
-                    <label for="era_violetta" style="display:inline; font-weight:normal;">Violetta</label><br>
-                    
-                    <input type="radio" id="era_quierovolver" name="era" value="quierovolver">
-                    <label for="era_quierovolver" style="display:inline; font-weight:normal;">Quiero Volver</label><br>
-                    
-                    <input type="radio" id="era_cupido" name="era" value="cupido">
-                    <label for="era_cupido" style="display:inline; font-weight:normal;">Cupido</label>
-                </div>
-
-                <!-- Input de tipo File -->
-                <div class="form-group">
-                    <label for="foto_perfil">Sube tu mejor foto en un show (Opcional):</label>
-                    <input type="file" id="foto_perfil" name="foto_perfil" class="form-control" style="background:transparent; border:none; padding-left:0;">
-                </div>
-
-                <!-- Textarea -->
-                <div class="form-group">
-                    <label for="mensaje">¿Por qué quieres unirte al club? *</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" class="form-control" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                </div>
-
-                <!-- Input de tipo Checkbox -->
-                <div class="form-checkbox">
-                    <input type="checkbox" id="terminos" name="terminos" required>
-                    <label for="terminos" style="display:inline; font-weight:normal; font-size:14px; color:#ddd;">Acepto los términos y condiciones de la página.</label>
-                </div>
-
-                <!-- Botones de Enviar y Borrar (Reset) -->
-                <div style="display: flex; gap: 15px; margin-top: 20px;">
-                    <button type="submit" class="btn-submit">Enviar Registro 💜</button>
-                    <button type="reset" class="btn-submit" style="background: #444; border: 1px solid #777;">Borrar Todo</button>
-                </div>
-            </form>
-        </div>
-
-        <hr>
-        <footer><p>Pie de página: Sección Fan Club</p></footer>
-    </section>
-</html>
-<head>
-    <meta charset="UTF-8">
-    <title>TINI - Sitio Oficial</title>
-    
-    <!-- Aquí es donde llamas al archivo CSS -->
-    <link rel="stylesheet" href="styles.css">
-    
-</head>
-<body>
-    
-    <!-- Aquí va todo el contenido de tu página: header, secciones, textos, imágenes, etc. -->
-    <h1>Hola Mundo</h1>
-
-    <!-- Justo antes del cierre del body, llamas a tu archivo JavaScript -->
-    <script src="js.js"></script>
-
-</body>
-<!-- 7. CURSO EN LÍNEA -->
-    <!-- 7. CURSO EN LÍNEA -->
-    <section id="curso">
-        <h2 class="section-title">Curso: Identidad Visual</h2>
-        
-        <details class="acordeon">
-            <summary>Haz clic aquí para ver la Guía de Estudio 👇</summary>
-            <div class="contenido-oculto">
-                <h3>Módulo 1: Construcción de Imagen Digital</h3>
-                <h4>Detalles de estudio</h4>
-                <p>Aprende cómo los artistas conectan emocionalmente a través de las redes.</p>
-            </div>
-        </details>
-
-        <hr>
-        <footer><p>Pie de página: Sección Curso</p></footer>
-    </section>
-
-    <!-- 8. BLOG -->
-    <section id="blog">
-        <h2 class="section-title">Blog Oficial TiniFans</h2>
-        
-        <details class="acordeon">
-            <summary>Ver última entrada: El éxito de Cupido 👇</summary>
-            <div class="contenido-oculto">
-                <h3>El éxito internacional de Cupido</h3>
-                <p>Cupido ha roto todos los récords de streaming este mes. ¡Gracias a todos los fans por el apoyo incondicional!</p>
-                
-                <h4>Comentarios</h4>
-                <p class="caja-comentario">
-                    "¡Me encantó el álbum, no paro de escucharlo!" <br> 
-                    <span style="color: var(--accent-pink); font-size: 14px;">- Usuario: TinistaForever</span>
-                </p>
-                
-                <pre>
-Letra destacada de la semana:
-
-"Tardo en contestarte... 
-y tú tardas en madurar"
-                </pre>
-            </div>
-        </details>
-
-        <hr>
-        <footer><p>Pie de página: Sección Blog</p></footer>
-    </section>
-
-    <!-- 9. QUIÉNES SOMOS Y FAQ -->
-    <section id="nosotros">
-        <h2 class="section-title">Comunidad</h2>
-        
-        <details class="acordeon">
-            <summary>¿Quiénes Somos? 👇</summary>
-            <div class="contenido-oculto">
-                <p>Somos el club de fans oficial, dedicado a seguir la carrera de Tini desde Violetta hasta hoy.</p>
-            </div>
-        </details>
-
-        <details class="acordeon">
-            <summary>Preguntas Frecuentes (FAQ) 👇</summary>
-            <div class="contenido-oculto">
-                <h3>¿Cuándo se anuncian nuevas fechas del tour?</h3>
-                <p>Las fechas se anuncian primero para los miembros registrados en el Fan Club.</p>
-            </div>
-        </details>
-
-        <hr>
-        <footer><p>Pie de página: Sección Nosotros</p></footer>
-    </section>
-
-    <!-- 10. CURRICULUM VITAE (Independiente) -->
-    <section id="cv">
-        <h2 class="section-title">Curriculum Vitae</h2>
-        
-        <details class="acordeon">
-            <summary>Ver perfil de Frias Milena 👇</summary>
-            <div class="contenido-oculto">
-                <h3>Educación</h3>
-                <p>Alumna de 4to 3ra - Desarrollo y Diseño Web.</p>
-                
-                <h3>Habilidades Técnicas</h3>
-                <p>Creación de Wireframes, HTML, CSS, JavaScript y Diseño de Interfaces.</p>
-            </div>
-        </details>
-
-        <hr>
-        <footer><p>Pie de página: Sección CV</p></footer>
-    </section>
-    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Etiqueta Title con Palabra Clave Principal -->
-    <title>Tini Stoessel | Fan Club Oficial y Tour 2026</title>
-    
-    <!-- Meta Description descriptiva y llamativa -->
-    <meta name="description" content="Únete al Fan Club oficial de Tini Stoessel. Descubre su biografía, fechas del tour 2026, discografía completa y compra merchandising exclusivo.">
-    
-    <link rel="stylesheet" href="styles.css">
+    <title>Proyecto - Ficha Técnica y Objetivos | TINI Oficial</title>
+    <meta name="description" content="Información técnica e institucional del proyecto web TINI - Frias Abigail - Materia: Adaptación al ambiente de trabajo.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<div id="reloj" style="font-size: 16px; font-weight: bold; color: var(--accent-pink);"></div>
-<button onclick="toggleDarkMode()" style="cursor:pointer;">🌙 Cambiar Tema</button>
+<body>
+
+    <!-- BARRA SUPERIOR DE HORA EN VIVO -->
+    <div id="reloj" style="font-size: 15px; font-weight: bold; color: var(--accent-pink, #e024b3); text-align: center; padding: 6px 0; background: rgba(0,0,0,0.5);"></div>
+
+    <!-- ENCABEZADO Y NAVEGACIÓN -->
+    <header>
+        <div class="logo"><span>💜</span> TINI</div>
+        <nav>
+            <a href="index.html#inicio">Inicio</a>
+            <a href="index.html#bio">Bio</a>
+            <a href="index.html#musica">Música</a>
+            <a href="index.html#tour">Tour</a>
+            <a href="index.html#tienda">Tienda</a>
+            <a href="index.html#fanclub">Fan Club</a>
+            <a href="proyecto.html" class="active">Proyecto</a>
+        </nav>
+    </header>
+
+    <div style="text-align: center; margin-top: 15px;">
+        <button id="toggle-tema" class="btn-tema" onclick="toggleDarkMode()">☀️ Cambiar Modo</button>
+    </div>
+
+    <main style="max-width: 900px; margin: 40px auto; padding: 0 20px;">
+        <h1 style="color: var(--accent-pink, #e024b3); border-bottom: 2px solid var(--accent-pink, #e024b3); padding-bottom: 10px;">
+            Acerca del Proyecto Web TINI
+        </h1>
+
+        <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 10px; margin-top: 25px; border: 1px solid rgba(255,255,255,0.1);">
+            <h2 style="color: #fff; margin-bottom: 15px;">Información Institucional</h2>
+            <ul style="line-height: 1.8; color: #e0e0e0; margin-left: 20px;">
+                <li><strong>Estudiante:</strong> Frias Abigail</li>
+                <li><strong>Materia:</strong> Adaptación al ambiente de trabajo &bull; Programación Web</li>
+                <li><strong>Temática:</strong> Plataforma integral de la artista internacional <em>TINI (Martina Stoessel)</em></li>
+                <li><strong>Repositorio GitHub:</strong> <a href="https://github.com/abigailfrias35-art/tini" target="_blank" style="color: #c084fc;">github.com/abigailfrias35-art/tini</a></li>
+            </ul>
+
+            <h2 style="margin-top: 25px; color: #fff; margin-bottom: 15px;">Evolución Arquitectónica del Proyecto</h2>
+            <p style="color: #ccc; line-height: 1.7;">El proyecto integra tanto el desarrollo frontend estático (HTML5, CSS3 moderno, JavaScript ES6) como la arquitectura backend completa con PHP y base de datos relacional MySQL:</p>
+            <ol style="line-height: 1.8; color: #e0e0e0; margin-left: 20px; margin-top: 10px;">
+                <li><strong>Frontend Interactivo:</strong> Carrusel fotográfico, selector de tema claro/oscuro, reloj en tiempo real y maquetación responsive orientada a la experiencia de usuario.</li>
+                <li><strong>Modularización de Plantillas (SSI):</strong> Extracción de <code>header.php</code>, <code>nav.php</code> y <code>footer.php</code> para reutilización de componentes.</li>
+                <li><strong>Procesamiento Seguro de Formularios:</strong> Métodos POST y GET con sanitización estricta contra ataques XSS y validaciones en servidor.</li>
+                <li><strong>Base de Datos Relacional Normalizada (3FN):</strong> Esquema en MySQL <code>tini_db</code> con 6 tablas relacionadas por claves foráneas, restricciones de integridad referencial e índices de rendimiento.</li>
+                <li><strong>Persistencia PDO & Autenticación:</strong> Consultas preparadas contra inyecciones SQL, hashing seguro con BCRYPT y control de sesiones con roles (Admin / Usuario).</li>
+            </ol>
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div style="text-align: center; padding: 30px 15px; margin-top: 50px; border-top: 1px solid rgba(224, 36, 179, 0.3); background: rgba(10, 2, 13, 0.95);">
+            <p style="margin: 0 0 6px 0; font-size: 15px;">&copy; 2026 <strong>TINI Stoessel Fan Club Oficial</strong> &bull; Sitio desarrollado por <strong>Frias Abigail</strong></p>
+            <p style="font-size: 13px; color: #d8b4fe; margin: 0 0 4px 0;">Materia: Adaptación al ambiente de trabajo &bull; Programación Web</p>
+            <p style="font-size: 12px; color: #888; margin: 0;">Contacto: <a href="mailto:abigailfrias35@gmail.com" style="color: var(--accent-pink, #e024b3); text-decoration: none;">abigailfrias35@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="js.js"></script>
+</body>
+</html>
